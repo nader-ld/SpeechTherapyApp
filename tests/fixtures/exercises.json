@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "practice",
+      "name": "Practice",
+      "color": "#123456"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "sample-cards",
+      "name": "Example cards",
+      "category": "practice",
+      "mode": "items",
+      "instructions": "Read a card.",
+      "items": [
+        {
+          "text": "Example A",
+          "answer": "Example response A",
+          "answerSource": "therapist"
+        },
+        {
+          "text": "Example B",
+          "answer": "Example response B",
+          "answerSource": "self",
+          "timerSec": 10
+        }
+      ]
+    },
+    {
+      "id": "sample-timer",
+      "name": "Example timer",
+      "category": "practice",
+      "mode": "timed",
+      "instructions": "Practise for the timer.",
+      "durationSec": 30,
+      "items": []
+    },
+    {
+      "id": "sample-reps",
+      "name": "Example repetitions",
+      "category": "practice",
+      "mode": "reps",
+      "instructions": "Tap once per repetition.",
+      "targetReps": 3,
+      "items": [
+        "One",
+        "Two"
+      ]
+    }
+  ],
+  "weeks": [
+    {
+      "id": "sample-week",
+      "label": "Example week",
+      "focus": "Practice",
+      "exerciseIds": [
+        "sample-cards",
+        "sample-timer",
+        "sample-reps"
+      ]
+    }
+  ]
+}

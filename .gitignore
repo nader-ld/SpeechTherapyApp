@@ -1,0 +1,26 @@
+.DS_Store
+node_modules/
+*.log
+.env
+
+# Personal exports / recordings stay local
+exports/
+recordings/
+
+# Firebase CLI
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+firestore-debug.log
+
+# Private therapy sources, local deployment identity, and history backups
+.private/
+source/
+public/data/exercises.json
+public/js/firebase-config.js
+.firebaserc
+firestore.rules
+*.bundle
+
+__pycache__/
+*.pyc

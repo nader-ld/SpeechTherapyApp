@@ -1,0 +1,24 @@
+rules_version = '2';
+
+// Speech Practice: one private tree per user. Only the allow-listed verified
+// account may read or write, and only its own documents.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function allowedUser(uid) {
+      return request.auth != null
+        && request.auth.uid == uid
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['owner@example.com'];
+    }
+
+    // Library and source link are private. Only administrative tools publish them.
+    match /private/library {
+      allow read: if request.auth != null && allowedUser(request.auth.uid);
+      allow write: if false;
+    }
+
+    match /users/{uid}/{document=**} {
+      allow read, write: if allowedUser(uid);
+    }
+  }
+}

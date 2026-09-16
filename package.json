@@ -1,0 +1,21 @@
+{
+  "name": "speech-practice",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Personal speech therapy practice companion (installable web app, no build step)",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "validate": "node scripts/validate.mjs",
+    "icons": "python3 scripts/make-icons.py",
+    "check": "node --check public/js/app.js && node --check public/js/store.js && node --check public/js/recorder.js && node --check public/js/cloud.js && node --check public/js/cloud-client.js && node --check public/js/firebase-config.example.js && node --check public/sw.js && npm run validate && npm test",
+    "preview": "firebase emulators:start --only hosting",
+    "deploy": "npm run check && firebase deploy --only hosting,firestore:rules",
+    "test": "node --test \"tests/*.test.mjs\"",
+    "deploy:rules": "firebase deploy --only firestore:rules",
+    "publish:library": "python3 scripts/publish-library.py"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
