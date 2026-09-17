@@ -2,7 +2,7 @@
 """Generate the PNG app icons (no dependencies; pure-Python PNG writer).
 
 Draws the same glyph as public/icons/icon.svg: three white rounded bars on a
-teal square. Output is full-bleed so it works as a maskable icon on Android and
+blue square. Output is full-bleed so it works as a maskable icon on Android and
 as an apple-touch-icon (iOS rounds the corners itself).
 
 Usage: npm run icons   (or python3 scripts/make-icons.py)
@@ -14,7 +14,7 @@ import zlib
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "public", "icons")
 
-BG = (0x0E, 0x7C, 0x86)
+BG = (0x0B, 0x57, 0xD0)
 FG = (0xFF, 0xFF, 0xFF)
 # (x, y, w, h) in a 512x512 space; corner radius = w/2 (pill shape)
 BARS = [(148, 196, 48, 120), (232, 136, 48, 240), (316, 176, 48, 160)]

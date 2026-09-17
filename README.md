@@ -4,6 +4,8 @@ An installable speech-practice web app with email/password authentication,
 private exercise libraries, recording/playback, timers, custom prompts, and a
 synced practice log. Plain HTML, CSS and JavaScript; no build step or npm dependencies.
 
+The deferred scheduling workflow is tracked in [Next steps](docs/NEXT_STEPS.md).
+
 ## Public code, private content
 
 This repository contains application code and invented test fixtures. It must

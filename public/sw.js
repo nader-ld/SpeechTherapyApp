@@ -1,6 +1,6 @@
 /* Speech Practice service worker.
    Bump VERSION whenever shell files (html/css/js/icons) change. */
-const VERSION = 'v6';
+const VERSION = 'v7';
 const CACHE = `speech-practice-${VERSION}`;
 
 /* Keep in sync with FIREBASE_SDK in js/firebase-config.js. */

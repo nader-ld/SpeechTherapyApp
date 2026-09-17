@@ -2,7 +2,7 @@
 import * as store from './store.js';
 import { Recorder, Metronome } from './recorder.js';
 
-const APP_VERSION = '0.2.0';
+const APP_VERSION = '0.3.0';
 let cloud = null; // ./cloud.js, loaded at boot (email/password sign-in + Firestore sync)
 const root = document.getElementById('app');
 const nav = document.getElementById('nav');
@@ -156,7 +156,7 @@ function today() {
         <h2>${esc(wk.focus)}</h2>
         ${wk.therapistNotes ? `<p class="muted notes">${esc(wk.therapistNotes)}</p>` : ''}
       </section>` : `
-      <section class="card"><p class="muted">No weekly plan yet. Add one under <code>weeks</code> in <code>public/data/exercises.json</code>.</p></section>`}
+      <section class="card"><p class="muted">No weekly plan yet. You can practise any exercise below.</p></section>`}
     <div class="section-head"><h3>Exercises</h3><span class="muted small">${doneCount}/${exs.length} done today</span></div>
     <ul class="list">${exs.map(exerciseCard).join('')}</ul>
     <p class="center" style="margin-top:20px"><a class="link" href="#/weeks">All weeks ›</a></p>
@@ -717,7 +717,7 @@ function settingsView() {
 
     <section class="card">
       <h3>Exercises</h3>
-      <p class="muted small" style="margin:6px 0 12px">Exercises come from <code>public/data/exercises.json</code> in the repo. Edit it, run <code>npm run validate</code>, then deploy.</p>
+      <p class="muted small" style="margin:6px 0 12px">Your exercise library syncs after sign-in. Reload to check for published updates.</p>
       <button class="btn" id="reload">↻ Reload exercises</button>
       <div class="mt">
         <div class="kv"><span class="muted">Exercises</span><b>${store.state.byId.size}</b></div>
