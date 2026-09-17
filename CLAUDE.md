@@ -7,6 +7,11 @@ all commits and their history, and out of the public Hosting directory.
 - Keep private originals under ignored `source/` or `.private/`.
 - The exercise library is `.private/library.json`, published with
   `npm run publish:library` to owner-only Firestore `private/library`.
+- Content update after a therapy session: the `/update-library` project command
+  (`.claude/commands/update-library.md`). It runs `npm run fetch:source`, which
+  exports the Google Doc through the Gmail gcloud login (needs a one-time
+  `gcloud auth login <gmail> --enable-gdrive-access`), diffs, edits the private
+  library, validates and publishes. No hosting deploy is needed for content.
 - The shared Google Doc link belongs only in ignored `.private/source.json` and
   the protected Firestore document. Never put its ID or content into public code.
 - `public/data/exercises.json` is deliberately absent. Do not restore or precache it.

@@ -69,6 +69,22 @@ Firestore. This does **not** automatically interpret or convert free-form notes
 into exercises; review changes before publishing them. No Hosting deploy is needed
 for library updates.
 
+### After a therapy session, with Claude Code
+
+`npm run fetch:source` exports the Google Doc (id from `documentUrl` in
+`.private/source.json`) as text and PDF into ignored `.private/source/`, using the
+named account's `gcloud` login. That login needs the Drive scope once:
+
+```bash
+gcloud auth login YOUR_ADMIN_ACCOUNT --enable-gdrive-access
+```
+
+Then, in Claude Code, run `/update-library`. The project command in
+`.claude/commands/update-library.md` fetches the document, diffs it against the
+last fetch, adds the new activity to `.private/library.json` (keeping existing
+ids so practice history stays attached), validates, and publishes. It asks
+before publishing anything ambiguous.
+
 ## Using the app
 
 Create an account or sign in with email/password, verify the email, and return to

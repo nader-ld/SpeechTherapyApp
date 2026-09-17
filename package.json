@@ -13,7 +13,8 @@
     "deploy": "npm run check && firebase deploy --only hosting,firestore:rules",
     "test": "node --test \"tests/*.test.mjs\"",
     "deploy:rules": "firebase deploy --only firestore:rules",
-    "publish:library": "python3 scripts/publish-library.py"
+    "publish:library": "python3 scripts/publish-library.py",
+    "fetch:source": "python3 scripts/fetch-source.py"
   },
   "engines": {
     "node": ">=18"
